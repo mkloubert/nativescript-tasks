@@ -189,8 +189,13 @@ export class Task<TState, TResult> extends Observable {
                 worker.onmessage = function(msg) {
                     worker.terminate();
 
+                    let result = msg.data;
+                    if (result) {
+                        result = JSON.parse(result);
+                    }
+
                     me.updateStatus(TaskStatus.RanToCompletion);
-                    completed(null, JSON.parse(msg.data));
+                    completed(null, result);
                 };
 
                 worker.onerror = function(err) {
@@ -211,12 +216,12 @@ export class Task<TState, TResult> extends Observable {
                     //
                     // author: humbletim (https://stackoverflow.com/users/1684079/humbletim)
                     func.args = funcStr.replace(/[/][/].*$/mg,'')  // strip single-line comments
-                                    .replace(/\s+/g, '')  // strip white space
-                                    .replace(/[/][*][^/*]*[*][/]/g, '')  // strip multi-line comments  
-                                    .split('){', 1)[0].replace(/^[^(]*[(]/, '')  // extract the parameters  
-                                    .replace(/=[^,]+/g, '')  // strip any ES6 defaults  
-                                    .split(',')
-                                    .filter(x => x);  // split & filter [""];
+                                       .replace(/\s+/g, '')  // strip white space
+                                       .replace(/[/][*][^/*]*[*][/]/g, '')  // strip multi-line comments  
+                                       .split('){', 1)[0].replace(/^[^(]*[(]/, '')  // extract the parameters  
+                                       .replace(/=[^,]+/g, '')  // strip any ES6 defaults  
+                                       .split(',')
+                                       .filter(x => x);  // split & filter [""];
                 }
 
                 me.updateStatus(TaskStatus.Running);

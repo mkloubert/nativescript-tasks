@@ -15,6 +15,8 @@ var t = Tasks.newTask(function(ctx) {
     var a = 1000;
     var b = 200;
     var c = ctx.state;
+
+    // return 0;
     
     return (a + b * c + 7);
 }).start(30).then((result) => {

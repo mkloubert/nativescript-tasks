@@ -37,6 +37,10 @@ onmessage = function(msg) {
         });
     }
 
-    postMessage(JSON.stringify(result));
+    if (result) {
+        result = JSON.stringify(result);
+    }
+
+    postMessage(result);
 }
 exports.onmessage = onmessage;

@@ -127,8 +127,12 @@ var Task = (function (_super) {
                 var worker_1 = new Worker('./worker');
                 worker_1.onmessage = function (msg) {
                     worker_1.terminate();
+                    var result = msg.data;
+                    if (result) {
+                        result = JSON.parse(result);
+                    }
                     me.updateStatus(TaskStatus.RanToCompletion);
-                    completed(null, JSON.parse(msg.data));
+                    completed(null, result);
                 };
                 worker_1.onerror = function (err) {
                     me.updateStatus(TaskStatus.Faulted);
