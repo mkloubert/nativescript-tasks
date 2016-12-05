@@ -1,6 +1,6 @@
 {
   "name": "nativescript-tasks",
-  "description": "NativeScript module for simply handling background tasks via web workers.",
+  "description": "NativeScript module for simply invoking and handling background tasks via web workers.",
   "version": "1.0.0",
   "nativescript": {
     "platforms": {
