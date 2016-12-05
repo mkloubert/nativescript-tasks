@@ -50,7 +50,7 @@ Tasks.startNew((ctx) => {
             });
 ```
 
-### Limitations
+## Limitations
 
 * You can only submit and return serializable objects and values!
 * All task functions are 'closures', what means that you CANNOT access the variables from the current execution context. All functions are serialized as strings and submitted to the [worker script](https://github.com/mkloubert/nativescript-tasks/blob/master/plugin/worker.js) where "your" variables are NOT available there!
