@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "nativescript-dev-typescript": "^0.3.4",
+    "nativescript-tasks": "file:..\\plugin",
     "nativescript-theme-core": "^0.2.1",
     "tns-core-modules": "2.4.1"
   },
