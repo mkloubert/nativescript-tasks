@@ -1,0 +1,38 @@
+{
+  "name": "nativescript-tasks",
+  "description": "NativeScript module for simply handling background tasks via web workers.",
+  "version": "1.0.0",
+  "nativescript": {
+    "platforms": {
+      "android": "1.1.0",
+      "ios": "1.0.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkloubert/nativescript-tasks"
+  },
+  "keywords": [
+    "NativeScript",
+    "Web",
+    "Workers",
+    "Tasks",
+    "Multi",
+    "Threading",
+    "Threads",
+    "Background"
+  ],
+  "author": {
+    "name": "Marcel Joachim Kloubert",
+    "email": "marcel.kloubert@gmx.net"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/mkloubert/nativescript-tasks/blob/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/mkloubert/nativescript-tasks/issues"
+  },
+  "homepage": "https://github.com/mkloubert/nativescript-tasks",
+  "readmeFilename": "README.md"
+}
