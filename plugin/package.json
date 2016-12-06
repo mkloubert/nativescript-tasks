@@ -1,7 +1,7 @@
 {
   "name": "nativescript-tasks",
   "description": "NativeScript module for simply invoking and handling background tasks via web workers.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "nativescript": {
     "platforms": {
       "android": "1.1.0",
@@ -16,6 +16,7 @@
     "NativeScript",
     "Web",
     "Workers",
+    "Webworkers",
     "Tasking",
     "Tasks",
     "Multi",
