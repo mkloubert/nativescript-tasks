@@ -155,7 +155,7 @@ export class Task<TState, TResult> extends Observable {
         return new Promise<TaskResult<TState, TResult>>((resolve, reject) => {
             let completed = (err: any, data?: TResult) => {
                 if (err) {
-                    reject({
+                    reject({                     
                         error: err,
                         state: state,
                     });
@@ -301,6 +301,6 @@ export function newTask<TResult>(func: TaskFunc<any, TResult>): Task<any, TResul
  * 
  * @return {Promise<TResult>} The promise.
  */
-export function startNew<TResult, TState>(func: TaskFunc<TState, TResult>, state?: TState): Promise<TResult> {
+export function startNew<TResult, TState>(func: TaskFunc<TState, TResult>, state?: TState): Promise<TaskResult<TState, TResult>> {
     return newTask<TResult>(func).start(state);
 }

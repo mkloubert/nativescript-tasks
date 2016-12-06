@@ -133,4 +133,4 @@ export declare function newTask<TResult>(func: TaskFunc<any, TResult>): Task<any
  *
  * @return {Promise<TResult>} The promise.
  */
-export declare function startNew<TResult, TState>(func: TaskFunc<TState, TResult>, state?: TState): Promise<TResult>;
+export declare function startNew<TResult, TState>(func: TaskFunc<TState, TResult>, state?: TState): Promise<TaskResult<TState, TResult>>;
