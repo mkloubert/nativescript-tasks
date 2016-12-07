@@ -152,7 +152,7 @@ var Task = (function (_super) {
                         .split('){', 1)[0].replace(/^[^(]*[(]/, '') // extract the parameters  
                         .replace(/=[^,]+/g, '') // strip any ES6 defaults  
                         .split(',')
-                        .filter(function (x) { return x; }); // split & filter [""];
+                        .filter(function (x) { return x; }); // remove empty values
                 }
                 me.updateStatus(TaskStatus.Running);
                 worker_1.postMessage(JSON.stringify({
@@ -224,7 +224,7 @@ exports.newTask = newTask;
  * Creates and starts a new task.
  *
  * @param {TaskFunc<TResult>} func The function to invoke.
- * @param {TaskFunc<TResult>} func The function to invoke.
+ * @param {TState} [state] The optional value / object for the execution.
  *
  * @return {Promise<TResult>} The promise.
  */

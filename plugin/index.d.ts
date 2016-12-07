@@ -129,7 +129,7 @@ export declare function newTask<TResult>(func: TaskFunc<any, TResult>): Task<any
  * Creates and starts a new task.
  *
  * @param {TaskFunc<TResult>} func The function to invoke.
- * @param {TaskFunc<TResult>} func The function to invoke.
+ * @param {TState} [state] The optional value / object for the execution.
  *
  * @return {Promise<TResult>} The promise.
  */

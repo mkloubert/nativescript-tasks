@@ -2,3 +2,4 @@
 /demo/platforms
 /demo/node_modules
 /plugin/*.map
+/demo/app/*.map

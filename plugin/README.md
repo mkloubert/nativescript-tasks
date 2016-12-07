@@ -53,6 +53,6 @@ Tasks.startNew((ctx) => {
 ## Limitations
 
 * You can only submit and return serializable objects and values!
-* All task functions are 'closures', what means that you CANNOT access variables or modules outside the function. All functions are serialized as strings and submitted to the [worker script](https://github.com/mkloubert/nativescript-tasks/blob/master/plugin/worker.js) where "external stuff" is NOT available! The only way to share data with the functions is to submit an optional and serializable "state value".
+* All task functions are 'closures', what means that you CANNOT access variables or modules outside such functions. All functions are serialized as strings and submitted to the [worker script](https://github.com/mkloubert/nativescript-tasks/blob/master/plugin/worker.js) where "external stuff" is NOT available! The only way to share data with the functions is to submit an optional and serializable "state value".
 
 Read the [official documentation](https://docs.nativescript.org/core-concepts/multithreading-model#limitations) to get more information.

@@ -221,7 +221,7 @@ export class Task<TState, TResult> extends Observable {
                                        .split('){', 1)[0].replace(/^[^(]*[(]/, '')  // extract the parameters  
                                        .replace(/=[^,]+/g, '')  // strip any ES6 defaults  
                                        .split(',')
-                                       .filter(x => x);  // split & filter [""];
+                                       .filter(x => x);  // remove empty values
                 }
 
                 me.updateStatus(TaskStatus.Running);
@@ -297,7 +297,7 @@ export function newTask<TResult>(func: TaskFunc<any, TResult>): Task<any, TResul
  * Creates and starts a new task.
  * 
  * @param {TaskFunc<TResult>} func The function to invoke.
- * @param {TaskFunc<TResult>} func The function to invoke.
+ * @param {TState} [state] The optional value / object for the execution.
  * 
  * @return {Promise<TResult>} The promise.
  */
